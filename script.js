@@ -86,6 +86,9 @@ function obtainPlayerSelection() {
 // function which validates player selection
 function validatePlayerSelection() {
   const playerInput = prompt("Enter one of the three words:  rock  paper  scissors");
+  if (playerInput === null) {
+    window.close();
+  }
   return choices.includes(playerInput.toLowerCase().trim()) ? playerInput : null;
 }
 
