@@ -35,13 +35,12 @@ Good luck!
 ///////////////////////////////////////////////////////////////////////////
 `;
 
-//function that starts all the game :)
-function playGame() {
-  alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
-  console.log(welcomeMessage, styleForWelcomeMessage);
-  console.log(gameInstruction, styleForGameInstruction);
+console.log(welcomeMessage, styleForWelcomeMessage);
+console.log(gameInstruction, styleForGameInstruction);
+alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
+setTimeout(() => {
   game();
-}
+}, 0);
 
 //variables that are needed in two functions: "game"  and "updateScores"
 let playerScore = 0;
@@ -135,5 +134,3 @@ function updateScores(result) {
         console.log("Upsss, sth went terribly wrong!");
     }
 }
-
-playGame();
