@@ -28,7 +28,7 @@ scissors / paper / rock
 - A player with a higher, final score wins.
 
 Warning!
-If you make a mistake while playing, the game start from the beginning.
+If you make a mistake while playing, the round repeats itself.
 
 Good luck!
 
