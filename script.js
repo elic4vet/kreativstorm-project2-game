@@ -1,4 +1,3 @@
-//Welcome message
 const styleForWelcomeMessage = 'color:blue; font-family:monospace; font-size: 16px; font-weight: bold;';
 
 const welcomeMessage = 
@@ -7,7 +6,6 @@ const welcomeMessage =
         ~~ Welcome to the "Rock, Paper, Scissors game"! ~~
 __________________________________________________________________`; 
 
-//Instructions for the game
 const styleForGameInstruction = 'font-size: 14px; font-weight: bold;'
 
 const gameInstruction = `
@@ -42,25 +40,9 @@ setTimeout(() => {
   game();
 }, 0);
 
-//variables that are needed in two functions: "game"  and "updateScores"
 let playerScore = 0;
 let computerScore = 0;
 
-function terminateOrContinueGame() {
-  const playerChoice = prompt(`If you want to play again click "OK", otherwise press "Cancel".`);
-  if (playerChoice === null) {
-    window.close();
-  } else {
-    console.clear();
-    console.log(welcomeMessage, styleForWelcomeMessage);
-    console.log(gameInstruction, styleForGameInstruction);
-    game();
-    alert(`~ Thank you for the game!
-    Your score: ${playerScore}         AI score: ${computerScore}`);
-  }
-}
-
-//function which repeat 1 round for 5 times
 function game() {
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
@@ -76,18 +58,14 @@ function game() {
   setTimeout(() => {
     terminateOrContinueGame();
   },0)
-  
 }
 
-//variable that stores the available choices
 const choices = ["rock", "paper", "scissors"];
 
-// function which generates a random choice for the computer
 function computerPlay() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-//function that will repeat the function validatePlayerSelection till the value that the player enters is correct
 function obtainPlayerSelection() {
   let playerInput = null;
   
@@ -101,7 +79,6 @@ function obtainPlayerSelection() {
   return playerInput;
 }
 
-// function which validates player selection
 function validatePlayerSelection() {
   const playerInput = prompt("Enter one of the three words:  rock  paper  scissors");
   if (playerInput === null) {
@@ -110,7 +87,6 @@ function validatePlayerSelection() {
   return choices.includes(playerInput.toLowerCase().trim()) ? playerInput : null;
 }
 
-// function "playRound" that plays a single round
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     console.log(`\n%cResult: It's a tie!\n`, "font-size: 13px; font-weight:bold; color:orange");
@@ -130,7 +106,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// function which generates a random messages when the player wins
 function selectUserWinsMessage() {
   const userWinsMessages = [
     "Great job", "Congratulation!", "You did it!", "Success!", "Victory!",
@@ -139,7 +114,6 @@ function selectUserWinsMessage() {
   return userWinsMessages[Math.floor(Math.random() * userWinsMessages.length)];
 }
 
-// function which generates a random messages when the computer wins
 function selectComputerWinsMessage() {
   const computerWinsMessages = [
     "Your IA opponent wins.", "Keep calm and game on.", "Don't give up!",
@@ -148,7 +122,6 @@ function selectComputerWinsMessage() {
   return computerWinsMessages[Math.floor(Math.random() * computerWinsMessages.length)];
 }
 
-//function that keeps track and adds points each round
 function updateScores(result) {
   switch (result) {
       case 0:
@@ -162,4 +135,18 @@ function updateScores(result) {
       default:
         console.log("Upsss, sth went terribly wrong!");
     }
+}
+
+function terminateOrContinueGame() {
+  const playerChoice = prompt(`If you want to play again click "OK", otherwise press "Cancel".`);
+  if (playerChoice === null) {
+    window.close();
+  } else {
+    console.clear();
+    console.log(welcomeMessage, styleForWelcomeMessage);
+    console.log(gameInstruction, styleForGameInstruction);
+    game();
+    alert(`~ Thank you for the game!
+    Your score: ${playerScore}         AI score: ${computerScore}`);
+  }
 }
