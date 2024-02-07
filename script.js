@@ -46,6 +46,20 @@ setTimeout(() => {
 let playerScore = 0;
 let computerScore = 0;
 
+function terminateOrContinueGame() {
+  const playerChoice = prompt(`If you want to play again click "OK", otherwise press "Cancel".`);
+  if (playerChoice === null) {
+    window.close();
+  } else {
+    console.clear();
+    console.log(welcomeMessage, styleForWelcomeMessage);
+    console.log(gameInstruction, styleForGameInstruction);
+    game();
+    alert(`~ Thank you for the game!
+    Your score: ${playerScore}         AI score: ${computerScore}`);
+  }
+}
+
 //function which repeat 1 round for 5 times
 function game() {
   for (let i = 0; i < 5; i++) {
@@ -59,6 +73,10 @@ function game() {
   }
   alert(`~ Thank you for the game!
   Your score: ${playerScore}         AI score: ${computerScore}`);
+  setTimeout(() => {
+    terminateOrContinueGame();
+  },0)
+  
 }
 
 //variable that stores the available choices
