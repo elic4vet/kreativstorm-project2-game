@@ -102,23 +102,31 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    console.log(`\n%cResult: You win :) ${selectUserWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:green");
+    console.log(`\n%cResult: You win :) ${selectUserWinsMessage()}\n`,
+    "font-size: 13px; font-weight:bold; color:green");
     return 1;
   } else {
-    console.log(`\n%cResult: You lose :( ${selectComputerWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:red");
+    console.log(`\n%cResult: You lose :( ${selectComputerWinsMessage()}\n`,
+    "font-size: 13px; font-weight:bold; color:red");
     return -1;
   }
 }
 
 // function which generates a random messages when the player wins
 function selectUserWinsMessage() {
-  const userWinsMessages = ["Great job, You win!", "Congratulation!", "You did it!", "Success!", "Victory!"];
+  const userWinsMessages = [
+    "Great job", "Congratulation!", "You did it!", "Success!", "Victory!",
+    "Hooooray!", "Well done!", "You got it!"
+  ];
   return userWinsMessages[Math.floor(Math.random() * userWinsMessages.length)];
 }
 
 // function which generates a random messages when the computer wins
 function selectComputerWinsMessage() {
-  const computerWinsMessages = ["Your IA opponent wins.", "Keep calm and game on.", "Don't give up!", "Maybe next time.", "Try harder."];
+  const computerWinsMessages = [
+    "Your IA opponent wins.", "Keep calm and game on.", "Don't give up!",
+    "Maybe next time.", "Try harder.", "No worries.", "Maybe next time."
+  ];
   return computerWinsMessages[Math.floor(Math.random() * computerWinsMessages.length)];
 }
 
