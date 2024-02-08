@@ -1,5 +1,5 @@
 ### KreativStorm-project2
-## ✂️ Our Rock, Paper, Scissors ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) Game
+## ✂️ Our Rock, Paper, Scissors Game - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  
 
 
 ## Table of contents
@@ -56,7 +56,7 @@ We created a rock, paper, scissors Js game that can be played on the console of 
 
 Some code snippets of our project:
 
-```js
+```JS
 const gameInstruction = `
 %c///////////////////////////////////////////////////////////////////////////
 
@@ -83,7 +83,7 @@ Good luck!
 `;
  
 ```
-```js
+```JS
 function game() {
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
@@ -113,5 +113,5 @@ We plan to fully develop this project using HTML and CSS to enhance the user exp
 
 - Alessandro Eumar de Lacerda Júnior 👨‍💻
 - Barbara Carvalho 👩‍💻
-- Marouani Mohamed Habib 👨‍💻
 - Elisabeth Erkekoglou 👩‍💻
+- Marouani Mohamed Habib 👨‍💻
