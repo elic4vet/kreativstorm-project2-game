@@ -114,4 +114,4 @@ We plan to fully develop this project using HTML and CSS to enhance the user exp
 - Alessandro Eumar de Lacerda Júnior 👨‍💻
 - Barbara Carvalho 👩‍💻
 - Marouani Mohamed Habib 👨‍💻
-- Elisavet Erkekoglou 👩‍💻
+- Elisabeth Erkekoglou 👩‍💻
