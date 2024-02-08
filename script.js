@@ -161,4 +161,16 @@ function updateScores(result) {
     }
 }
 
-playGame();
+function terminateOrContinueGame() {
+  const playerChoice = confirm(`If you want to play again click "OK", otherwise press "Cancel".`);
+  if (playerChoice === false) {
+    window.close();
+  } else {
+    console.clear();
+    console.log(welcomeMessage, styleForWelcomeMessage);
+    console.log(gameInstruction, styleForGameInstruction);
+    game();
+    alert(`~ Thank you for the game!
+    Your score: ${playerScore}         AI score: ${computerScore}`);
+  }
+}
