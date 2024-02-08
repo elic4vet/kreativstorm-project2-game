@@ -138,8 +138,8 @@ function updateScores(result) {
 }
 
 function terminateOrContinueGame() {
-  const playerChoice = prompt(`If you want to play again click "OK", otherwise press "Cancel".`);
-  if (playerChoice === null) {
+  const playerChoice = confirm(`If you want to play again click "OK", otherwise press "Cancel".`);
+  if (playerChoice === false) {
     window.close();
   } else {
     console.clear();
