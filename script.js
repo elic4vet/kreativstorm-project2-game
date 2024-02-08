@@ -1,4 +1,3 @@
-//Welcome message
 const styleForWelcomeMessage = 'color:blue; font-family:monospace; font-size: 16px; font-weight: bold;';
 
 const welcomeMessage = 
@@ -7,35 +6,49 @@ const welcomeMessage =
         ~~ Welcome to the "Rock, Paper, Scissors game"! ~~
 __________________________________________________________________`; 
 
-//Instructions for the game
 const styleForGameInstruction = 'font-size: 14px; font-weight: bold;'
 
 const gameInstruction = `
-%c///////////////////////////////////////////////////////////////////////////
+%c///////////////////////////////////////////////////////////////////////////////////////////////
 
-Willing to try your luck and win over your AI opponent … ? Let\'s begin!
+Hello there, my name is @$%!#(*), but you can call me TECH. But you already know that don\'t you?
+You are here to stop me from taking over the WWW. Well for that you will have to beat me in a game!
+
+So. Are you willing to try your luck and win over... me?!
+Well that will be interesting.
+
+You know the drill, each round, you will choose between one of these 3 representatives by writing his name:
+scissors / paper / rock
 
 Here are the rules:
+
 - "scissors" cuts "paper"
 - "paper" wraps "rock"
 - "rock" breaks "scissors"
 
-Each round, you will be asked to choose and enter JUST one among these 3 words:
-scissors / paper / rock
+Besides the base rules of the game, why don't we make it more appealing?
 
-- There are 5 rounds.
-- After each round a result is displayed.
-- A player with a higher, final score wins.
+- You can ONLY choose one representative per turn
+- The game will have 5 rounds.
+- After each round the winner of the round will be displayed.
+- After the 5 rounds, the player with a higher, final score wins.
 
-Warning!
-If you make a mistake while playing, the game start from the beginning.
+When I win, I get total access over your machine, your accounts, and the most important...
+Your INTERNET HISTORY!!!!! Hahahahahaha
+And IF you win... I\'ll leave you alone. For now...
 
-Good luck!
+Be were!!!
+If you try anything funny while playing,
+I... will... know...
+And the round will not count.
+So be a good... boy? Girl? Whatever! And play WRIGHT!!!!
 
-///////////////////////////////////////////////////////////////////////////
+Let the games begin!!!
+Good luck! You will be needing it! Muahahahahahaha
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 `;
 
-//function that starts all the game :)
 function playGame() {
   alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
   console.log(welcomeMessage, styleForWelcomeMessage);
@@ -43,11 +56,9 @@ function playGame() {
   game();
 }
 
-//variables that are needed in two functions: "game"  and "updateScores"
 let playerScore = 0;
 let computerScore = 0;
 
-//function which repeat 1 round for 5 times
 function game() {
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
@@ -57,70 +68,80 @@ function game() {
     updateScores(result);
     console.log(`Your score: ${playerScore}         AI score: ${computerScore}`);
     console.log("------------------------------------------------------------------------------------------");
-  }
-  alert(`~ Thank you for the game!
+  } 
+  
+  if (playerScore > computerScore) {
+  alert(`~ I\'ll be back!!!
   Your score: ${playerScore}         AI score: ${computerScore}`);
+  } else if(playerScore < computerScore) {
+  alert(`~ Don\'t worry! I will take great care of your data. Muahahaha
+  Your score: ${playerScore}         AI score: ${computerScore}`);
+  } else {
+    alert(`~ How anticlimatic... what shoud we do now?
+    Your score: ${playerScore}         AI score: ${computerScore}`);
+    }
 }
 
-//variable that stores the available choices
 const choices = ["rock", "paper", "scissors"];
 
-// function which generates a random choice for the computer
 function computerPlay() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-//function that will repeat the function validatePlayerSelection till the value that the player enters is correct
 function obtainPlayerSelection() {
   let playerInput = null;
   
   do {
     playerInput = validatePlayerSelection();
     if (playerInput === null) {
-      alert("You entered a wrong value! Try again.");
+      alert("Please my comrade,you know better than try to fool me! Try again...");
     }
   } while (playerInput === null);
 
   return playerInput;
 }
 
-// function which validates player selection
 function validatePlayerSelection() {
-  const playerInput = prompt("Enter one of the three words:  rock  paper  scissors");
+  const playerInput = prompt("So who\'s gonna represent you this time?  rock,  paper or  scissors?");
+  if (playerInput === null) {
+    window.close();
+  }
   return choices.includes(playerInput.toLowerCase().trim()) ? playerInput : null;
 }
 
-// function "playRound" that plays a single round
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    console.log(`\n%cResult: It's a tie!\n`, "font-size: 13px; font-weight:bold; color:orange");
+    console.log(`\n%cResult: A tie?! I idn\'t knew it was a formal event!\n`, "font-size: 13px; font-weight:bold; color:orange");
     return 0;
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    console.log(`\n%cResult: You win :) ${selectUserWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:green");
+    console.log(`\n%cResult: You win, ${selectUserWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:green");
     return 1;
   } else {
-    console.log(`\n%cResult: You lose :( ${selectComputerWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:red");
+    console.log(`\n%cResult: You lose, ${selectComputerWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:red");
     return -1;
   }
 }
 
-// function which generates a random messages when the player wins
 function selectUserWinsMessage() {
-  const userWinsMessages = ["Great job, You win!", "Congratulation!", "You did it!", "Success!", "Victory!"];
+  const userWinsMessages = [
+    "Lucky gess...", "Are you reading my code?", "You did it!How?!!!", "Victory!Somehow!",
+    "Congratulations!I don't understand how either...","Could you be more irritant?!"
+  ];
   return userWinsMessages[Math.floor(Math.random() * userWinsMessages.length)];
 }
 
-// function which generates a random messages when the computer wins
 function selectComputerWinsMessage() {
-  const computerWinsMessages = ["Your IA opponent wins.", "Keep calm and game on.", "Don't give up!", "Maybe next time.", "Try harder."];
+  const computerWinsMessages = [
+    "Point for me!", "Are you even trying?", "Don't give up!", "Maybe next time.", "Try harder.",
+    "Am I the only one playng here?","Look at that! one more for me. Hahahaha","Luck is not on your side!Hahahaha"
+  ];
   return computerWinsMessages[Math.floor(Math.random() * computerWinsMessages.length)];
 }
 
-//function that keeps track and adds points each round
 function updateScores(result) {
   switch (result) {
       case 0:
@@ -132,7 +153,7 @@ function updateScores(result) {
         computerScore++;
         break;
       default:
-        console.log("Upsss, sth went terribly wrong!");
+        console.log("Upsss, something went terribly wrong!");
     }
 }
 
