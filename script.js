@@ -51,12 +51,12 @@ Good luck! You will need it! Muahahahahahaha
 ///////////////////////////////////////////////////////////////////////////////////////////////
 `;
 
-function playGame() {
-  alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
-  console.log(welcomeMessage, styleForWelcomeMessage);
-  console.log(gameInstruction, styleForGameInstruction);
+console.log(welcomeMessage, styleForWelcomeMessage);
+console.log(gameInstruction, styleForGameInstruction);
+alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
+setTimeout(() => {
   game();
-}
+}, 0);
 
 let playerScore = 0;
 let computerScore = 0;
@@ -73,15 +73,18 @@ function game() {
   } 
   
   if (playerScore > computerScore) {
-  alert(`~ I\'ll be back!!!
-  Your score: ${playerScore}         AI score: ${computerScore}`);
+    alert(`~ I\'ll be back!!!
+    Your score: ${playerScore}         AI score: ${computerScore}`);
   } else if(playerScore < computerScore) {
-  alert(`~ Don\'t worry! I will take great care of your data. Muahahaha
-  Your score: ${playerScore}         AI score: ${computerScore}`);
+    alert(`~ Don\'t worry! I will take great care of your data. Muahahaha
+    Your score: ${playerScore}         AI score: ${computerScore}`);
   } else {
     alert(`~ How anticlimatic... what shoud we do now?
     Your score: ${playerScore}         AI score: ${computerScore}`);
-    }
+  }
+  setTimeout(() => {
+    terminateOrContinueGame();
+  },0)
 }
 
 const choices = ["rock", "paper", "scissors"];
