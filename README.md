@@ -27,7 +27,7 @@ We created a rock, paper, scissors Js game that can be played on the console of 
 
 ### Screenshots
 
-![Screenshot](./images/instructions.png)
+![Screenshot](./assets/images/instructions.png)
 
 ![Screenshot](./assets/images/results1.png)
 
