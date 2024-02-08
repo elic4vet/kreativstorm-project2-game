@@ -34,7 +34,7 @@ We created a rock, paper, scissors Js game that can be played on the console of 
 ![Screenshot](./assets/images/results2.png)
 
 ![Screenshot](./assets/images/resultpopup.png)
- 
+
 
 ### What we used
 
@@ -51,7 +51,6 @@ We created a rock, paper, scissors Js game that can be played on the console of 
 
 - How to create a game using  JavaScript.
 - How to style the console messages with CSS, using the %c format specifier.
-
 
 ### Code snippets
 
@@ -108,7 +107,6 @@ function game() {
 [Format and style messages in the Console](https://developer.chrome.com/docs/devtools/console/format-style)
 [text](https://developer.chrome.com/docs/devtools/console/format-style)
 
-
 ### Continued development
 We plan to fully develop this project using HTML and CSS to enhance the user experience and deliver efficient results.
 
@@ -118,5 +116,3 @@ We plan to fully develop this project using HTML and CSS to enhance the user exp
 - Barbara Carvalho 👩‍💻
 - Marouani Mohamed Habib 👨‍💻
 - Elisavet Erkekoglou 👩‍💻
- 
- 
