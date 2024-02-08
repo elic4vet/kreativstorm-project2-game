@@ -105,7 +105,6 @@ function game() {
 ### Useful resources
 
 [Format and style messages in the Console](https://developer.chrome.com/docs/devtools/console/format-style)
-[text](https://developer.chrome.com/docs/devtools/console/format-style)
 
 ### Continued development
 We plan to fully develop this project using HTML and CSS to enhance the user experience and deliver efficient results.
