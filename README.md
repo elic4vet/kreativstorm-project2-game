@@ -1,5 +1,5 @@
 ### KreativStorm-project2
-## ✂️ Our Rock, Paper, Scissors Game- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  
+## ✂️ Our Rock, Paper, Scissors ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) Game
 
 
 ## Table of contents
