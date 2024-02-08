@@ -37,11 +37,13 @@ When I win, I get total access over your machine, your accounts, and the most im
 Your INTERNET HISTORY!!!!! Hahahahahaha
 And IF you win... I\'ll leave you alone. For now...
 
+
 Be were!!!
 If you try anything funny while playing,
 I... will... know...
 And the round will not count.
 So be a good... boy? Girl? Whatever! And play WRIGHT!!!!
+
 
 Let the games begin!!!
 Good luck! You will be needing it! Muahahahahahaha
@@ -49,12 +51,14 @@ Good luck! You will be needing it! Muahahahahahaha
 ///////////////////////////////////////////////////////////////////////////////////////////////
 `;
 
-function playGame() {
-  alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
-  console.log(welcomeMessage, styleForWelcomeMessage);
-  console.log(gameInstruction, styleForGameInstruction);
+
+console.log(welcomeMessage, styleForWelcomeMessage);
+console.log(gameInstruction, styleForGameInstruction);
+alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
+setTimeout(() => {
+
   game();
-}
+}, 0);
 
 let playerScore = 0;
 let computerScore = 0;
@@ -80,6 +84,10 @@ function game() {
     alert(`~ How anticlimatic... what shoud we do now?
     Your score: ${playerScore}         AI score: ${computerScore}`);
     }
+  setTimeout(() => {
+    terminateOrContinueGame();
+  },0)
+
 }
 
 const choices = ["rock", "paper", "scissors"];
@@ -102,6 +110,7 @@ function obtainPlayerSelection() {
 }
 
 function validatePlayerSelection() {
+
   const playerInput = prompt("So who\'s gonna represent you this time?  rock,  paper or  scissors?");
   if (playerInput === null) {
     window.close();
@@ -118,10 +127,12 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
+
     console.log(`\n%cResult: You win, ${selectUserWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:green");
     return 1;
   } else {
     console.log(`\n%cResult: You lose, ${selectComputerWinsMessage()}\n`, "font-size: 13px; font-weight:bold; color:red");
+
     return -1;
   }
 }
@@ -157,4 +168,16 @@ function updateScores(result) {
     }
 }
 
-playGame();
+function terminateOrContinueGame() {
+  const playerChoice = prompt(`If you want to play again click "OK", otherwise press "Cancel".`);
+  if (playerChoice === null) {
+    window.close();
+  } else {
+    console.clear();
+    console.log(welcomeMessage, styleForWelcomeMessage);
+    console.log(gameInstruction, styleForGameInstruction);
+    game();
+    alert(`~ Thank you for the game!
+    Your score: ${playerScore}         AI score: ${computerScore}`);
+  }
+}
