@@ -27,11 +27,15 @@ We created a rock, paper, scissors Js game that can be played on the console of 
 
 ### Screenshots
 
-![Screenshot](./assets/images/instructions.png)
+![Screenshot](./assets/images/intro1.png)
 
-![Screenshot](./assets/images/results1.png)
+![Screenshot](./assets/images/instructions1.png)
 
-![Screenshot](./assets/images/results2.png)
+![Screenshot](./assets/images/game1.png)
+
+![Screenshot](./assets/images/game2.png)
+
+![Screenshot](./assets/images/game3.png)
 
 ![Screenshot](./assets/images/resultpopup.png)
 
@@ -56,32 +60,47 @@ We created a rock, paper, scissors Js game that can be played on the console of 
 
 Some code snippets of our project:
 
-```JS
-const gameInstruction = `
-%c///////////////////////////////////////////////////////////////////////////
 
-Willing to try your luck and win over your AI opponent … ? Let\'s begin!
+```JS
+const villainIntro = `
+%cHello there, my name is @$%!#(*), but you can call me TECH. But you already know that don\'t you?
+You are here to stop me from taking over the WWW. Well for that you will have to beat me in a game!
+
+`
+const gameInstruction = `%c//////////////////////////////////////////////////////////////////////////////////////////
+
+So. Are you willing to try your luck and win over... me?!
+Well that will be interesting.
+
+You know the drill, each round, you will choose one of these 3 representatives:
+scissors / paper / rock
 
 Here are the rules:
 - "scissors" cuts "paper"
 - "paper" wraps "rock"
 - "rock" breaks "scissors"
 
-Each round, you will be asked to choose and enter JUST one among these 3 words:
-scissors / paper / rock
+Besides the base rules of the game, why don't we make it more appealing?
+- You can choose ONLY one representative per turn.
+- The game will have 5 rounds.
+- After each round, the winner of the round will be displayed.
+- After the 5th round, the player with higher scores wins.
 
-- There are 5 rounds.
-- After each round a result is displayed.
-- A player with a higher, final score wins.
+When I win, I get total access over your machine, your accounts, and the most important...
+Your INTERNET HISTORY!!!!! Hahahahahaha
+And IF you win... I\'ll leave you alone. For now...
 
-Warning!
-If you make a mistake while playing, the round repeats itself.
+Beware!!!
+If you try anything funny while playing,
+I... will... know...
+And the round will not count.
+So be a good meat sack, and play WRIGHT!!!!
 
-Good luck!
+Let the games begin!!!
+Good luck! You will need it! Muahahahahahaha
 
-///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 `;
- 
 ```
 ```JS
 function game() {
