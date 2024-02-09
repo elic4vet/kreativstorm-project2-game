@@ -90,6 +90,7 @@ function game() {
     alert(`~ How anticlimatic... what shoud we do now?
     Your score: ${playerScore}         AI score: ${computerScore}`);
   }
+  alert(`~ Thank you for the game!`);
   setTimeout(() => {
     terminateOrContinueGame();
   }, 0)
@@ -194,7 +195,5 @@ function terminateOrContinueGame() {
     console.log(welcomeMessage, styleForWelcomeMessage);
     console.log(gameInstruction, styleForGameInstruction);
     game();
-    alert(`~ Thank you for the game!
-    Your score: ${playerScore}         AI score: ${computerScore}`);
   }
 }
