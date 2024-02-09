@@ -6,8 +6,10 @@ const welcomeMessage =
         ~~ Welcome to the "Rock, Paper, Scissors game"! ~~
 __________________________________________________________________`; 
 
+const styleForVillainIntro = '';
+
 const villainIntro = `
-Hello there, my name is @$%!#(*), but you can call me TECH. But you already know that don\'t you?
+%cHello there, my name is @$%!#(*), but you can call me TECH. But you already know that don\'t you?
 You are here to stop me from taking over the WWW. Well for that you will have to beat me in a game!
 `
 
@@ -19,7 +21,7 @@ const gameInstruction = `
 So. Are you willing to try your luck and win over... me?!
 Well that will be interesting.
 
-You know the drill, each round, you will choose between one of these 3 representatives by writing their name:
+You know the drill, each round, you will choose one of these 3 representatives:
 scissors / paper / rock
 
 Here are the rules:
@@ -52,6 +54,7 @@ Good luck! You will need it! Muahahahahahaha
 `;
 
 console.log(welcomeMessage, styleForWelcomeMessage);
+console.log(villainIntro, styleForVillainIntro);
 console.log(gameInstruction, styleForGameInstruction);
 alert(`Welcome to the "Rock, Paper, Scissors game"! Let's play :)`);
 setTimeout(() => {
