@@ -185,6 +185,8 @@ function updateScores(result) {
 }
 
 function terminateOrContinueGame() {
+  playerScore = 0;
+  computerScore = 0;
   const playerChoice = confirm(
     `If you want to play again click "OK", otherwise press "Cancel".`
   );
