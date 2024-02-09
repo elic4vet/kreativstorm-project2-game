@@ -7,7 +7,7 @@ const welcomeMessage =
         ~~ Welcome to the "Rock, Paper, Scissors" game! ~~
 __________________________________________________________________`; 
 
-const styleForVillainIntro = '';
+const styleForVillainIntro = 'color:#966919; font-family:monospace; font-size: 16px; font-weight: bold;';
 
 const villainIntro = `
 %cHello there, my name is @$%!#(*), but you can call me TECH. But you already know that don\'t you?
