@@ -2,7 +2,13 @@ const styleForWelcomeMessage =
   'color:blue; font-family:monospace; font-size: 16px; font-weight: bold;';
 
 const welcomeMessage = 
-`%c__________________________________________________________________
+`
+
+
+
+
+
+%c__________________________________________________________________
 
         ~~ Welcome to the "Rock, Paper, Scissors" game! ~~
 __________________________________________________________________`; 
