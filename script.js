@@ -2,7 +2,13 @@ const styleForWelcomeMessage =
   'color:blue; font-family:monospace; font-size: 16px; font-weight: bold;';
 
 const welcomeMessage = 
-`%c__________________________________________________________________
+`
+
+
+
+
+
+%c__________________________________________________________________
 
         ~~ Welcome to the "Rock, Paper, Scissors" game! ~~
 __________________________________________________________________`; 
@@ -65,9 +71,14 @@ let playerScore = 0;
 let computerScore = 0;
 
 function game() {
+  let gameCanceled = false;
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
     const playerSelection = obtainPlayerSelection();
+    if (playerSelection === undefined) {
+      gameCanceled = true;
+      break;
+    }
     console.log(
       `Round nr ${i + 1}  Your selection: ${playerSelection} /` +
       `AI selection: ${computerSelection}`
@@ -80,20 +91,22 @@ function game() {
     );
   } 
   
-  if (playerScore > computerScore) {
-    alert(`~ I\'ll be back!!!
-    Your score: ${playerScore}         AI score: ${computerScore}`);
-  } else if(playerScore < computerScore) {
-    alert(`~ Don\'t worry! I will take great care of your data. Muahahaha
-    Your score: ${playerScore}         AI score: ${computerScore}`);
-  } else {
-    alert(`~ How anticlimatic... what shoud we do now?
-    Your score: ${playerScore}         AI score: ${computerScore}`);
+  if (!gameCanceled) {
+    if (playerScore > computerScore) {
+      alert(`~ I\'ll be back!!!
+      Your score: ${playerScore}         AI score: ${computerScore}`);
+    } else if(playerScore < computerScore) {
+      alert(`~ Don\'t worry! I will take great care of your data. Muahahaha
+      Your score: ${playerScore}         AI score: ${computerScore}`);
+    } else {
+      alert(`~ How anticlimatic... what shoud we do now?
+      Your score: ${playerScore}         AI score: ${computerScore}`);
+    }
+    alert(`~ Thank you for the game!`);
+    setTimeout(() => {
+      terminateOrContinueGame();
+    }, 0)
   }
-  alert(`~ Thank you for the game!`);
-  setTimeout(() => {
-    terminateOrContinueGame();
-  }, 0)
 }
 
 const choices = ["rock", "paper", "scissors"];
@@ -103,26 +116,32 @@ function computerPlay() {
 }
 
 function obtainPlayerSelection() {
-  let playerInput = null;
+  let playerChoice = null;
   
   do {
-    playerInput = validatePlayerSelection();
-    if (playerInput === null) {
+    playerChoice = validatePlayerSelection();
+    if (playerChoice === null) {
       alert("Please my comrade, you know better than try to fool me! Try again...");
     }
-  } while (playerInput === null);
+  } while (playerChoice === null);
 
-  return playerInput;
+  return playerChoice;
 }
 
 function validatePlayerSelection() {
   const playerInput = prompt(
-    "So who\'s gonna represent you this time?  rock,  paper or  scissors?"
+    "So who\'s gonna represent you?  rock,  paper or  scissors?"
   );
   if (playerInput === null) {
-    window.close();
+    if (confirm("Are you sure you want to quit the game?")) {
+      window.close();
+      return;
+    } else {
+      return null;
+    }
   }
-  return choices.includes(playerInput.toLowerCase().trim()) ? playerInput : null;
+  const input = playerInput.toLowerCase().trim();
+  return choices.includes(input) ? input : null;
 }
 
 function playRound(playerSelection, computerSelection) {
