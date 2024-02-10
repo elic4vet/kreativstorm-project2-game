@@ -71,9 +71,14 @@ let playerScore = 0;
 let computerScore = 0;
 
 function game() {
+  let gameCanceled = false;
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
     const playerSelection = obtainPlayerSelection();
+    if (playerSelection === undefined) {
+      gameCanceled = true;
+      break;
+    }
     console.log(
       `Round nr ${i + 1}  Your selection: ${playerSelection} /` +
       `AI selection: ${computerSelection}`
@@ -86,20 +91,22 @@ function game() {
     );
   } 
   
-  if (playerScore > computerScore) {
-    alert(`~ I\'ll be back!!!
-    Your score: ${playerScore}         AI score: ${computerScore}`);
-  } else if(playerScore < computerScore) {
-    alert(`~ Don\'t worry! I will take great care of your data. Muahahaha
-    Your score: ${playerScore}         AI score: ${computerScore}`);
-  } else {
-    alert(`~ How anticlimatic... what shoud we do now?
-    Your score: ${playerScore}         AI score: ${computerScore}`);
+  if (!gameCanceled) {
+    if (playerScore > computerScore) {
+      alert(`~ I\'ll be back!!!
+      Your score: ${playerScore}         AI score: ${computerScore}`);
+    } else if(playerScore < computerScore) {
+      alert(`~ Don\'t worry! I will take great care of your data. Muahahaha
+      Your score: ${playerScore}         AI score: ${computerScore}`);
+    } else {
+      alert(`~ How anticlimatic... what shoud we do now?
+      Your score: ${playerScore}         AI score: ${computerScore}`);
+    }
+    alert(`~ Thank you for the game!`);
+    setTimeout(() => {
+      terminateOrContinueGame();
+    }, 0)
   }
-  alert(`~ Thank you for the game!`);
-  setTimeout(() => {
-    terminateOrContinueGame();
-  }, 0)
 }
 
 const choices = ["rock", "paper", "scissors"];
@@ -130,7 +137,7 @@ function validatePlayerSelection() {
       window.close();
       return;
     } else {
-      restartGame();
+      return null;
     }
   }
   const input = playerInput.toLowerCase().trim();
