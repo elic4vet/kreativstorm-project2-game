@@ -109,26 +109,32 @@ function computerPlay() {
 }
 
 function obtainPlayerSelection() {
-  let playerInput = null;
+  let playerChoice = null;
   
   do {
-    playerInput = validatePlayerSelection();
-    if (playerInput === null) {
+    playerChoice = validatePlayerSelection();
+    if (playerChoice === null) {
       alert("Please my comrade, you know better than try to fool me! Try again...");
     }
-  } while (playerInput === null);
+  } while (playerChoice === null);
 
-  return playerInput;
+  return playerChoice;
 }
 
 function validatePlayerSelection() {
   const playerInput = prompt(
-    "So who\'s gonna represent you this time?  rock,  paper or  scissors?"
+    "So who\'s gonna represent you?  rock,  paper or  scissors?"
   );
   if (playerInput === null) {
-    window.close();
+    if (confirm("Are you sure you want to quit the game?")) {
+      window.close();
+      return;
+    } else {
+      restartGame();
+    }
   }
-  return choices.includes(playerInput.toLowerCase().trim()) ? playerInput : null;
+  const input = playerInput.toLowerCase().trim();
+  return choices.includes(input) ? input : null;
 }
 
 function playRound(playerSelection, computerSelection) {
