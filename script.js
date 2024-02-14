@@ -16,8 +16,10 @@ __________________________________________________________________`;
 const styleForVillainIntro = 'color:#966919; font-family:monospace; font-size: 16px; font-weight: bold;';
 
 const villainIntro = `
-%cHello there, my name is @$%!#(*), but you can call me TECH. But you already know that don\'t you?
-You are here to stop me from taking over the WWW. Well for that you will have to beat me in a game!
+%cHello there, my name is @$%!#(*), but you can call me TECH.
+But you already know that don\'t you?
+You are here to stop me from taking over the WWW.
+Well for that you will have to beat me in a game!
 
 `
 
@@ -134,7 +136,7 @@ function validatePlayerSelection() {
   );
   if (playerInput === null) {
     if (confirm("Are you sure you want to quit the game?")) {
-      window.close();
+      console.clear();
       return;
     } else {
       return null;
@@ -210,7 +212,7 @@ function terminateOrContinueGame() {
     `If you want to play again click "OK", otherwise press "Cancel".`
   );
   if (playerChoice === false) {
-    window.close();
+    console.clear();
   } else {
     console.clear();
     console.log(welcomeMessage, styleForWelcomeMessage);
